@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">raicesapp</string>
+    <string name="title_activity_main">raicesapp</string>
+    <string name="package_name">com.raices.app</string>
+    <string name="custom_url_scheme">com.raices.app</string>
+</resources>
