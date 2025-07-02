@@ -77,5 +77,33 @@
             </p>
         </section>
 
+        <section class="mt-20 px-4 sm:px-8 space-y-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-center text-azul mb-12 tracking-wide">Línea del Tiempo</h2>
+
+            <div class="relative border-l-4 border-verde pl-6 space-y-16">
+                <div *ngFor="let item of imagenes" class="relative group" data-aos="fade-up">
+
+                    <!-- Punto del año -->
+                    <div class="absolute -left-3 top-2 w-6 h-6 bg-verde rounded-full shadow-lg border-4 border-white">
+                    </div>
+
+                    <!-- Año -->
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="bg-verde text-white px-4 py-1 rounded-full text-sm font-semibold shadow">
+                            {{ item.ano }}
+                        </span>
+                        <span class="h-px flex-1 bg-verde/50"></span>
+                    </div>
+
+                    <!-- Galería de imágenes -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+                        <img *ngFor="let ruta of item.rutas" [src]="ruta.img" loading="lazy"
+                            class="w-full aspect-video object-cover rounded-2xl shadow-lg transform hover:scale-105 hover:brightness-105 transition duration-300 ease-in-out"
+                            alt="Imagen {{ item.ano }}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 </div>
