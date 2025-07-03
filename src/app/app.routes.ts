@@ -5,6 +5,7 @@ import { CulturaComponent } from './pages/cultura/cultura.component';
 import { TurismoComponent } from './pages/turismo/turismo.component';
 import { AgriculturaComponent } from './pages/agricultura/agricultura.component';
 import { DemografiaComponent } from './pages/demografia/demografia.component';
+import { GastronomiaComponent } from './pages/gastronomia/gastronomia.component';
 
 export const routes: Routes = [
     { path: '', component: DashboardComponent },
@@ -13,6 +14,7 @@ export const routes: Routes = [
     { path: 'turismo', component: TurismoComponent },
     { path: 'agricultura', component: AgriculturaComponent },
     { path: 'demografia', component: DemografiaComponent },
+    { path: 'gastronomia', component: GastronomiaComponent },
     { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 

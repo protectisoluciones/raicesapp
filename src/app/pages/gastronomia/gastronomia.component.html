@@ -1,0 +1,78 @@
+<div class="max-w-4xl mx-auto bg-gradient-to-br from-white to-verde/5 shadow-2xl rounded-3xl overflow-hidden mt-10"
+    data-aos="zoom-in-up">
+    <!-- Imagen principal -->
+    <img src="assets/img/gastronomia.jpg" alt="Gastronomía de Repelón"
+        class="w-full h-60 sm:h-72 object-cover rounded-b-none transition-transform duration-700 ease-in-out hover:scale-105"
+        data-aos="fade-down">
+
+    <div class="p-6 sm:p-10 space-y-10">
+        <!-- Título principal -->
+        <h2 class="text-3xl font-bold text-azul mb-6 flex items-center gap-2 bg-verde/10 p-3 rounded-xl shadow-sm"
+            data-aos="fade-up">
+            <span routerLink="" class="inline-block bg-verde/10 p-2 rounded-full shadow">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-azul" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 16l-4-4m0 0l4-4m-4 4h16" />
+                </svg>
+            </span>
+            Gastronomía de Repelón
+        </h2>
+
+        <!-- Sección 1 -->
+        <section
+            class="relative border-l-4 border-verde pl-6 bg-white hover:bg-verde/5 hover:shadow-lg transition-all duration-300 rounded-md p-4"
+            data-aos="fade-up">
+            <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
+            <h3 class="text-xl font-semibold text-azul mb-2">🍛 Platos típicos</h3>
+            <p class="text-justify leading-relaxed text-gray-700">
+                Se destacan platos como el arroz con coco, pescado frito, arepas de huevo y mazamorra,
+                acompañados de ensaladas frescas y guarniciones con tubérculos y frutas tropicales,
+                representando la riqueza del Caribe.
+            </p>
+        </section>
+
+        <!-- Sección 2 -->
+        <section
+            class="relative border-l-4 border-verde pl-6 bg-white hover:bg-verde/5 hover:shadow-lg transition-all duration-300 rounded-md p-4"
+            data-aos="fade-right">
+            <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
+            <h3 class="text-xl font-semibold text-azul mb-2">🍹 Bebidas tradicionales</h3>
+            <p class="text-justify leading-relaxed text-gray-700">
+                No pueden faltar jugos naturales como el de granadilla, guanábana, maracuyá y la tradicional
+                chicha de mango. También se consumen bebidas calientes como el café campesino y el guarapo.
+            </p>
+        </section>
+
+        <!-- Sección 3 -->
+        <section
+            class="relative border-l-4 border-verde pl-6 bg-white hover:bg-verde/5 hover:shadow-lg transition-all duration-300 rounded-md p-4"
+            data-aos="fade-left">
+            <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
+            <h3 class="text-xl font-semibold text-azul mb-2">🍰 Dulces criollos</h3>
+            <p class="text-justify leading-relaxed text-gray-700">
+                Entre los postres destacan la mazamorra, el dulce de níspero y cocadas caseras,
+                elaborados con recetas transmitidas de generación en generación.
+            </p>
+        </section>
+
+        <!-- Álbum de fotos gastronómicas -->
+        <div class="mt-12" data-aos="fade-up">
+            <h3 class="text-2xl font-bold text-azul mb-6 flex items-center gap-2 bg-verde/10 p-3 rounded-xl shadow-sm">
+                📷 Álbum Gastronómico
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <!-- Generar dinámicamente 10 imágenes -->
+                <!-- Repite esto para 1 hasta 10 -->
+                <ng-container *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+                    <div class="overflow-hidden rounded-xl shadow-lg group transition-transform duration-300 hover:scale-105"
+                        data-aos="zoom-in">
+                        <img [src]="'assets/img/Gastronomia/' + i + '.jpg'" alt="Gastronomía {{i}}"
+                            class="w-full h-40 object-cover">
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

@@ -85,5 +85,22 @@ export class HistoriaComponent {
         { img: 'assets/img/1998/30.jpg' }
       ]
     },
+    {
+      ano: '2025',
+      rutas: [
+        {
+          img: 'assets/img/2025/1.jpg'
+        },
+        {
+          img: 'assets/img/2025/2.jpg'
+        },
+        {
+          img: 'assets/img/2025/3.jpg'
+        },
+        {
+          img: 'assets/img/2025/4.jpg'
+        }
+      ]
+    }
   ]
 }
