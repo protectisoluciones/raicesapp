@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, computed } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LottieComponent, AnimationOptions, provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
@@ -15,14 +15,14 @@ export function playerFactory() {
   providers: [provideLottieOptions({ player: playerFactory })],
   template: `
     <div
-      class="fixed bottom-[5%] right-4 z-50 flex items-end gap-4 animate-fade-in group"
+      class="fixed bottom-4 right-4 z-[9999] flex items-end gap-4 animate-fade-in group pointer-events-auto"
       (mouseenter)="pausarCambio()"
       (mouseleave)="reanudarCambio()"
     >
       <div
-        class="bg-white border-r-4 border-verde rounded-xl p-4 shadow-lg text-gray-800 text-sm text-right max-w-xs transition-all duration-500"
+        class="bg-white border-r-4 border-verde rounded-xl p-4 shadow-lg text-gray-800 text-sm text-right max-w-xs transform transition-all duration-700 ease-in-out"
         [class.opacity-0]="!mostrarMensaje()"
-        [class.translate-y-2]="!mostrarMensaje()"
+        [class.translate-y-4]="!mostrarMensaje()"
         (click)="siguienteMensaje()"
       >
         {{ mensajeActual() }}
@@ -38,15 +38,15 @@ export function playerFactory() {
   `,
   styles: [`
     @keyframes fade-in {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     .animate-fade-in {
-      animation: fade-in 0.8s ease-in-out;
+      animation: fade-in 1s ease-out;
     }
   `],
 })
-export class AvatarGuideComponent implements OnInit {
+export class AvatarGuideComponent implements OnInit, OnDestroy {
   options: AnimationOptions = {
     path: 'assets/animations/girl-avatar.json',
     autoplay: true,
@@ -68,12 +68,16 @@ export class AvatarGuideComponent implements OnInit {
   mensajeActual = computed(() => this.mensajes[this.indice()]);
   mostrarMensaje = signal(true);
 
-  private intervalo?: any;
+  private intervalo?: ReturnType<typeof setInterval>;
   private pausado = false;
 
   ngOnInit() {
     this.iniciarCambioAutomático();
     this.configurarIntersecciones();
+  }
+
+  ngOnDestroy(): void {
+    if (this.intervalo) clearInterval(this.intervalo);
   }
 
   handleAnimationCreated(animationItem: AnimationItem): void {
@@ -111,16 +115,22 @@ export class AvatarGuideComponent implements OnInit {
 
   configurarIntersecciones() {
     const secciones = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          if (id === 'cultura') this.setMensaje('¡Estás viendo la cultura de Repelón! 🎭');
-          else if (id === 'demografia') this.setMensaje('Mira cuánta gente vive en Repelón 👥');
-          else if (id === 'historia') this.setMensaje('Repelón tiene historia desde el siglo XIX 📜');
-        }
-      });
-    }, { threshold: 0.5 });
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            if (id === 'cultura') this.setMensaje('¡Estás viendo la cultura de Repelón! 🎭');
+            else if (id === 'demografia') this.setMensaje('Mira cuánta gente vive en Repelón 👥');
+            else if (id === 'historia') this.setMensaje('Repelón tiene historia desde el siglo XIX 📜');
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+        rootMargin: '0px 0px -20% 0px'
+      }
+    );
 
     secciones.forEach(sec => observer.observe(sec));
   }
