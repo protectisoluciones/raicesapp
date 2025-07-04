@@ -12,29 +12,16 @@
 
 <body>
   <app-root></app-root>
+
   <script src="assets/js/aos.js"></script>
   <script>
     AOS.init({
-      duration: 1000,
-      once: true
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+      offset: 80,
+      delay: 50,
     });
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            obs.unobserve(entry.target); // solo ocurre una vez
-          }
-        });
-      }, { threshold: 0.2 });
-
-      reveals.forEach(el => observer.observe(el));
-    });
-
   </script>
 </body>
 

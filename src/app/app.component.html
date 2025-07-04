@@ -1,21 +1,19 @@
 <div class="flex flex-col min-h-screen bg-blanco text-verde font-sans">
     <!-- Header -->
-    <header class="bg-verde text-blanco shadow-md">
+    <header class="bg-verde/90 text-blanco shadow-md backdrop-blur-sm">
         <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
-            <h1 class="text-2xl sm:text-3xl font-bold tracking-wide">
-                🌿 Raíces
-            </h1>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-wide">🌿 Raíces</h1>
         </div>
     </header>
 
     <!-- Contenido principal sin margen superior -->
-    <main class="flex-grow bg-gradient-to-br from-blue-900 via-blue-700 to-blue-600">
+    <main class="flex-grow bg-white/80 backdrop-blur-sm" style="background-image: url('assets/img/fondo.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <app-avatar-guide></app-avatar-guide>
         <router-outlet />
     </main>
 
     <!-- Footer -->
-    <footer class="bg-verde text-white text-center text-sm py-4 shadow-md">
+    <footer class="bg-verde/90 text-white text-center text-sm py-4 shadow-md backdrop-blur-sm">
         © 2025 Raíces - Municipio de Repelón
     </footer>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LottieComponent, AnimationOptions, provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
@@ -12,26 +12,27 @@ export function playerFactory() {
   selector: 'app-avatar-guide',
   standalone: true,
   imports: [CommonModule, LottieComponent],
-  providers: [
-    provideLottieOptions({
-      player: playerFactory,
-    }),
-  ],
+  providers: [provideLottieOptions({ player: playerFactory })],
   template: `
     <div
-      class="fixed bottom-4 right-4 z-50 flex items-end gap-4 animate-fade-in"
-      (click)="siguienteMensaje()"
+      class="fixed bottom-[5%] right-4 z-50 flex items-end gap-4 animate-fade-in group"
+      (mouseenter)="pausarCambio()"
+      (mouseleave)="reanudarCambio()"
     >
       <div
-        class="bg-white border-r-4 border-verde rounded-xl p-4 shadow-lg text-gray-800 text-sm text-right max-w-xs"
+        class="bg-white border-r-4 border-verde rounded-xl p-4 shadow-lg text-gray-800 text-sm text-right max-w-xs transition-all duration-500"
+        [class.opacity-0]="!mostrarMensaje()"
+        [class.translate-y-2]="!mostrarMensaje()"
+        (click)="siguienteMensaje()"
       >
-        {{ mensajes[indiceMensaje] }}
+        {{ mensajeActual() }}
       </div>
 
       <ng-lottie
         [options]="options"
         (animationCreated)="handleAnimationCreated($event)"
-        class="w-20 h-20 drop-shadow-xl cursor-pointer"
+        class="w-20 h-20 drop-shadow-xl cursor-pointer transition-transform duration-300 group-hover:scale-110"
+        (click)="siguienteMensaje()"
       ></ng-lottie>
     </div>
   `,
@@ -45,16 +46,16 @@ export function playerFactory() {
     }
   `],
 })
-export class AvatarGuideComponent {
+export class AvatarGuideComponent implements OnInit {
   options: AnimationOptions = {
     path: 'assets/animations/girl-avatar.json',
     autoplay: true,
-    loop: true
+    loop: true,
   };
 
   animationItem?: AnimationItem;
 
-  mensajes: string[] = [
+  mensajesBase = [
     '¡Hola! Soy Sofi, tu guía 😊',
     'Haz clic en las secciones para saber más.',
     '¿Sabías que Repelón tiene historia desde 1848?',
@@ -62,13 +63,65 @@ export class AvatarGuideComponent {
     'Si tienes dudas, ¡hazme clic!'
   ];
 
-  indiceMensaje = 0;
+  mensajes = [...this.mensajesBase];
+  indice = signal(0);
+  mensajeActual = computed(() => this.mensajes[this.indice()]);
+  mostrarMensaje = signal(true);
+
+  private intervalo?: any;
+  private pausado = false;
+
+  ngOnInit() {
+    this.iniciarCambioAutomático();
+    this.configurarIntersecciones();
+  }
 
   handleAnimationCreated(animationItem: AnimationItem): void {
     this.animationItem = animationItem;
   }
 
   siguienteMensaje() {
-    this.indiceMensaje = (this.indiceMensaje + 1) % this.mensajes.length;
+    this.indice.update(i => (i + 1) % this.mensajes.length);
+    this.mostrarMensaje.set(true);
+  }
+
+  setMensaje(nuevo: string) {
+    if (this.mensajes[0] !== nuevo) {
+      this.mensajes.unshift(nuevo);
+      this.indice.set(0);
+      this.mostrarMensaje.set(true);
+    }
+  }
+
+  pausarCambio() {
+    this.pausado = true;
+    clearInterval(this.intervalo);
+  }
+
+  reanudarCambio() {
+    if (!this.intervalo) this.iniciarCambioAutomático();
+    this.pausado = false;
+  }
+
+  iniciarCambioAutomático() {
+    this.intervalo = setInterval(() => {
+      if (!this.pausado) this.siguienteMensaje();
+    }, 12000);
+  }
+
+  configurarIntersecciones() {
+    const secciones = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          if (id === 'cultura') this.setMensaje('¡Estás viendo la cultura de Repelón! 🎭');
+          else if (id === 'demografia') this.setMensaje('Mira cuánta gente vive en Repelón 👥');
+          else if (id === 'historia') this.setMensaje('Repelón tiene historia desde el siglo XIX 📜');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    secciones.forEach(sec => observer.observe(sec));
   }
 }

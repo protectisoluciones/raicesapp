@@ -1,20 +1,20 @@
-<div class="max-w-4xl mx-auto bg-gradient-to-br from-white to-verde/5 shadow-2xl rounded-3xl overflow-hidden mt-10"
+<div class="max-w-4xl mx-auto px-4 sm:px-6 bg-gradient-to-br from-white to-verde/5 shadow-2xl rounded-3xl overflow-hidden mt-10"
     data-aos="zoom-in-up">
+
     <!-- Imagen superior -->
-    <div class="aspect-w-16 aspect-h-9 overflow-hidden group">
+    <div class="aspect-[16/9] overflow-hidden group">
         <img src="assets/img/culturas.png" alt="Cultura de Repelón"
             class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 rounded-b-none"
-            data-aos="fade-down">
+            loading="lazy" />
     </div>
 
-    <div class="p-6 sm:p-10 space-y-14">
+    <div class="p-6 sm:p-10 space-y-14" data-aos="fade-up">
         <!-- Título principal -->
-        <header class="text-3xl font-bold text-azul flex items-center gap-3 bg-verde/10 p-4 rounded-xl shadow-sm"
-            data-aos="fade-up">
+        <header class="text-3xl font-bold text-azul flex items-center gap-3 bg-verde/10 p-4 rounded-xl shadow-sm">
             <a routerLink=""
                 class="inline-flex items-center justify-center bg-verde/20 p-2 rounded-full shadow hover:scale-110 transition-transform">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-azul" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-azul" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M8 16l-4-4m0 0l4-4m-4 4h16" />
                 </svg>
@@ -24,9 +24,10 @@
 
         <!-- Secciones culturales -->
         <section class="space-y-10">
-            <article
-                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300"
+            <!-- Sección 1 -->
+            <article class="group relative p-6 bg-white rounded-xl border-l-4 border-verde hover:bg-verde/5 transition-all duration-300 shadow hover:shadow-lg"
                 data-aos="fade-up">
+                <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
                 <h3 class="text-xl font-semibold text-azul mb-2">🎶 Música y Bandas Locales</h3>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     En junio de 2025 se realizó el primer <strong>Encuentro de Bandas “Vientos y Memorias”</strong>, con
@@ -35,9 +36,10 @@
                 </p>
             </article>
 
-            <article
-                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300"
+            <!-- Sección 2 -->
+            <article class="group relative p-6 bg-white rounded-xl border-l-4 border-verde hover:bg-verde/5 transition-all duration-300 shadow hover:shadow-lg"
                 data-aos="fade-right">
+                <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
                 <h3 class="text-xl font-semibold text-azul mb-2">🍬 Festivales Gastronómicos</h3>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     En Rotinet se celebra el <strong>“Festival de la Mazamorra”</strong>, que rescata la tradición
@@ -46,9 +48,10 @@
                 </p>
             </article>
 
-            <article
-                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300"
+            <!-- Sección 3 -->
+            <article class="group relative p-6 bg-white rounded-xl border-l-4 border-verde hover:bg-verde/5 transition-all duration-300 shadow hover:shadow-lg"
                 data-aos="fade-left">
+                <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
                 <h3 class="text-xl font-semibold text-azul mb-2">🎭 Tradiciones y Festividades</h3>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     Eventos como el <strong>Festival del Burro</strong>, las <strong>Corralejas</strong> y el
@@ -57,9 +60,10 @@
                 </p>
             </article>
 
-            <article
-                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300"
+            <!-- Sección 4 -->
+            <article class="group relative p-6 bg-white rounded-xl border-l-4 border-verde hover:bg-verde/5 transition-all duration-300 shadow hover:shadow-lg"
                 data-aos="fade-up">
+                <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
                 <h3 class="text-xl font-semibold text-azul mb-2">🧶 Artesanía y Gastronomía</h3>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     La cestería con palma de iraca y los platos típicos como el arroz con coco y la mazamorra mantienen
@@ -67,9 +71,10 @@
                 </p>
             </article>
 
-            <article
-                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300"
+            <!-- Sección 5 -->
+            <article class="group relative p-6 bg-white rounded-xl border-l-4 border-verde hover:bg-verde/5 transition-all duration-300 shadow hover:shadow-lg"
                 data-aos="zoom-in">
+                <div class="absolute -left-2 top-2 w-4 h-4 bg-verde rounded-full shadow"></div>
                 <h3 class="text-xl font-semibold text-azul mb-2">🏛️ Espacios de Cultura</h3>
                 <p class="text-gray-700 leading-relaxed text-justify">
                     La <strong>Casa de la Cultura</strong> y la sala arqueológica de Villa Rosa son centros clave para
@@ -84,10 +89,9 @@
                 📷 Álbum Cultural
             </h3>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                <!-- Iteración de imágenes -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
                 <ng-container *ngFor="let i of [1,2,3,4,5,6,7]">
-                    <div class="overflow-hidden rounded-xl shadow-lg group transition-transform duration-300 hover:scale-105"
+                    <div class="overflow-hidden rounded-xl shadow-md group transition-transform duration-300 hover:scale-105"
                         data-aos="zoom-in">
                         <img [src]="'assets/img/Festivales/' + i + '.jpg'" [alt]="'Evento cultural ' + i"
                             class="w-full h-40 object-cover rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
@@ -98,3 +102,4 @@
         </section>
     </div>
 </div>
+
