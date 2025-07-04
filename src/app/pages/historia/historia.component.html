@@ -1,88 +1,104 @@
-<div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden mt-10">
+<div class="max-w-4xl mx-auto bg-gradient-to-br from-white to-verde/5 shadow-2xl rounded-3xl overflow-hidden mt-10">
     <!-- Imagen superior -->
-    <img src="assets/img/bandera.webp" alt="Repelón Histórico"
-        class="w-full h-60 sm:h-72 object-cover rounded-b-none transition duration-700 hover:scale-105"
-        data-aos="fade-down">
+    <div class="aspect-[16/9] overflow-hidden group">
+        <img src="assets/img/bandera.webp" alt="Repelón Histórico" loading="lazy"
+            class="w-full h-full object-cover transition duration-700 group-hover:scale-105 rounded-b-none" />
+    </div>
 
-    <div class="p-6 sm:p-10 space-y-10">
-
+    <div class="p-6 sm:p-10 space-y-14">
         <!-- Título principal -->
-        <h2 class="text-3xl font-bold text-azul mb-6 flex items-center gap-2" data-aos="fade-up">
-            <span routerLink="" class="inline-block bg-verde/10 p-2 rounded-full shadow">
+        <header class="text-3xl font-bold text-azul flex items-center gap-3 bg-verde/10 p-4 rounded-xl shadow-sm">
+            <a routerLink="" aria-label="Volver"
+                class="inline-flex items-center justify-center bg-verde/20 p-2 rounded-full shadow hover:scale-110 transition-transform">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-azul" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M8 16l-4-4m0 0l4-4m-4 4h16" />
                 </svg>
-            </span>
+            </a>
             Historia de Repelón
-        </h2>
+        </header>
 
-        <!-- Sección 1 -->
-        <section class="relative border-l-4 border-verde pl-4" data-aos="fade-up">
-            <h3 class="text-xl font-semibold text-azul mb-2">📍 Orígenes y Fundación</h3>
-            <p class="text-justify leading-relaxed text-gray-700">
-                El origen del municipio se remonta a mediados del siglo XIX cuando comunidades del antiguo
-                poblado de <strong>San Benito de las Palomas</strong> se vieron obligadas a desplazarse debido
-                a inundaciones provocadas por el <em>Canal del Dique</em> y el desbordamiento de la Ciénaga
-                conocida como “Limpia”. Durante más de una década, alrededor de 50–60 familias se trasladaron
-                a zonas más altas y comenzaron a establecer asentamientos o “repelones”, de donde deriva
-                el nombre de la población moderna.
-            </p>
+        <!-- Secciones históricas -->
+        <section class="space-y-10">
+            <article
+                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-semibold text-azul mb-2">📍 Orígenes y Fundación</h3>
+                <p class="text-justify leading-relaxed text-gray-700">
+                    El origen del municipio se remonta a mediados del siglo XIX cuando comunidades del antiguo poblado
+                    de
+                    <strong>San Benito de las Palomas</strong> se vieron obligadas a desplazarse debido a inundaciones
+                    provocadas
+                    por el <em>Canal del Dique</em> y el desbordamiento de la Ciénaga conocida como “Limpia”. Durante
+                    más de una
+                    década, alrededor de 50–60 familias se trasladaron a zonas más altas y comenzaron a establecer
+                    asentamientos o
+                    “repelones”, de donde deriva el nombre de la población moderna.
+                </p>
+            </article>
+
+            <article
+                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-semibold text-azul mb-2">🏛️ Elevación a Distrito y Municipio</h3>
+                <p class="text-justify leading-relaxed text-gray-700">
+                    El 25 de octubre de 1848, se considera la fecha oficial de fundación de Repelón, atribuida a Hilario
+                    Berrío
+                    Melgarejo y Domingo Díaz Matos. En 1860, Juan José Nieto lo elevó a categoría de distrito de la
+                    provincia de
+                    Mahates. Más tarde, en 1886 con la Constitución de Rojas Pinilla, fue degradado a corregimiento y
+                    finalmente,
+                    el 15 de abril de 1905, fue restaurado como municipio por el Decreto 233.
+                </p>
+            </article>
+
+            <article
+                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-semibold text-azul mb-2">🌾 Transformaciones Sociales y Económicas</h3>
+                <p class="text-justify leading-relaxed text-gray-700">
+                    Desde finales del siglo XIX y durante el XX, Repelón consolidó una economía basada en la agricultura
+                    (tabaco,
+                    algodón, yuca, maíz), pesca artesanal y ganadería. Además, la construcción del embalse del Guájaro
+                    desplazó
+                    vestigios históricos sumergiendo la antigua Iglesia de San Benito Abad bajo sus aguas. En años
+                    recientes,
+                    cultivos como sorgo, plátano y limón Tahití han dinamizado la economía local, impulsados por
+                    iniciativas
+                    agroindustriales.
+                </p>
+            </article>
+
+            <article
+                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-semibold text-azul mb-2">🎶 Patrimonio Cultural y Deportivo</h3>
+                <p class="text-justify leading-relaxed text-gray-700">
+                    La identidad de Repelón se refleja en su escudo, bandera y las bandas musicales que celebran su
+                    herencia
+                    multicultural. Además, es un conocido semillero de béisboleros, donde se destacan figuras como
+                    Giovanny Pérez,
+                    lanzador de un juego sin hit ni carrera en 1996.
+                </p>
+            </article>
+
+            <article
+                class="group relative p-6 bg-white rounded-xl border-l-4 border-verde shadow hover:shadow-lg transition-shadow duration-300">
+                <h3 class="text-xl font-semibold text-azul mb-2">🚀 Visión de Futuro</h3>
+                <p class="text-justify leading-relaxed text-gray-700">
+                    Hoy Repelón es una despensa agrícola y pesquera del Atlántico, con una fuerte vocación
+                    agroindustrial.
+                    Proyectos de riego y producción diversificada buscan sostener crecimiento y empleo sostenible en la
+                    región.
+                </p>
+            </article>
         </section>
 
-        <!-- Sección 2 -->
-        <section class="relative border-l-4 border-verde pl-4" data-aos="fade-right">
-            <h3 class="text-xl font-semibold text-azul mb-2">🏛️ Elevación a Distrito y Municipio</h3>
-            <p class="text-justify leading-relaxed text-gray-700">
-                El 25 de octubre de 1848, se considera la fecha oficial de fundación de Repelón, atribuida
-                a Hilario Berrío Melgarejo y Domingo Díaz Matos. En 1860,
-                Juan José Nieto lo elevó a categoría de distrito de la provincia de Mahates. Más tarde, en
-                1886 con la Constitución de Rojas Pinilla, fue degradado a corregimiento y finalmente, el
-                15 de abril de 1905, fue restaurado como municipio por el Decreto 233.
-            </p>
-        </section>
-
-        <!-- Sección 3 -->
-        <section class="relative border-l-4 border-verde pl-4" data-aos="fade-left">
-            <h3 class="text-xl font-semibold text-azul mb-2">🌾 Transformaciones Sociales y Económicas</h3>
-            <p class="text-justify leading-relaxed text-gray-700">
-                Desde finales del siglo XIX y durante el XX, Repelón consolidó una economía basada en la
-                agricultura (tabaco, algodón, yuca, maíz), pesca artesanal y ganadería. Además, la construcción
-                del embalse del Guájaro desplazó vestigios históricos sumergiendo la antigua Iglesia de San
-                Benito Abad bajo sus aguas. En años recientes, cultivos como
-                sorgo, plátano y limón Tahití han dinamizado la economía local, impulsados por iniciativas
-                agroindustriales.
-            </p>
-        </section>
-
-        <!-- Sección 4 -->
-        <section class="relative border-l-4 border-verde pl-4" data-aos="fade-up">
-            <h3 class="text-xl font-semibold text-azul mb-2">🎶 Patrimonio Cultural y Deportivo</h3>
-            <p class="text-justify leading-relaxed text-gray-700">
-                La identidad de Repelón se refleja en su escudo, bandera y las bandas musicales que celebran
-                su herencia multicultural. Además, es un conocido semillero de
-                béisboleros, donde se destacan figuras como Giovanny Pérez, lanzador de un juego sin hit ni carrera
-                en 1996.
-            </p>
-        </section>
-
-        <!-- Sección 5 -->
-        <section class="relative border-l-4 border-verde pl-4" data-aos="zoom-in">
-            <h3 class="text-xl font-semibold text-azul mb-2">🚀 Visión de Futuro</h3>
-            <p class="text-justify leading-relaxed text-gray-700">
-                Hoy Repelón es una despensa agrícola y pesquera del Atlántico, con una fuerte vocación
-                agroindustrial. Proyectos de riego y producción diversificada buscan sostener crecimiento y empleo
-                sostenible en la región.
-            </p>
-        </section>
-
-        <section class="mt-20 px-4 sm:px-8 space-y-16" data-aos="fade-up">
-            <h2 class="text-4xl font-extrabold text-center text-azul mb-12 tracking-wide">Línea del Tiempo</h2>
+        <!-- Línea del tiempo -->
+        <section class="space-y-6">
+            <h3 class="text-2xl font-bold text-azul flex items-center gap-2 bg-verde/10 p-3 rounded-xl shadow-sm">
+                📜 Línea del Tiempo
+            </h3>
 
             <div class="relative border-l-4 border-verde pl-6 space-y-16">
-                <div *ngFor="let item of imagenes" class="relative group" data-aos="fade-up">
-
+                <div *ngFor="let item of imagenes" class="relative group">
                     <!-- Punto del año -->
                     <div class="absolute -left-3 top-2 w-6 h-6 bg-verde rounded-full shadow-lg border-4 border-white">
                     </div>
@@ -95,15 +111,14 @@
                         <span class="h-px flex-1 bg-verde/50"></span>
                     </div>
 
-                    <!-- Galería de imágenes -->
+                    <!-- Galería -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
                         <img *ngFor="let ruta of item.rutas" [src]="ruta.img" loading="lazy"
-                            class="w-full aspect-video object-cover rounded-2xl shadow-lg transform hover:scale-105 hover:brightness-105 transition duration-300 ease-in-out"
-                            alt="Imagen {{ item.ano }}">
+                            [alt]="'Imagen ' + item.ano"
+                            class="w-full aspect-video object-cover rounded-2xl shadow-lg transform hover:scale-105 hover:brightness-105 transition duration-300 ease-in-out" />
                     </div>
                 </div>
             </div>
         </section>
-
     </div>
 </div>
